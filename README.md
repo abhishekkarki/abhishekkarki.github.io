@@ -4,9 +4,7 @@ This site in under construction, please visit after sometime :)
 
 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Thrash
 
 Journey started form
 ```markdown
