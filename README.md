@@ -1,6 +1,6 @@
 ## Welcome 
 
-This site in under construction, please visit after sometime :)
+This site is in under construction, please visit after sometime :)
 
 
 
