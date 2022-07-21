@@ -1,3 +1,5 @@
+<html>
+
 ## Welcome 
 
 This site is in under construction, please visit after sometime :)
@@ -14,7 +16,7 @@ int main(){
   return 0;
 ```
 
-<html>
+
   <head>
     This is head.
   </head>
