@@ -10,6 +10,11 @@
 - `tsc --init --sourceMap --rootDir src --outDir dist` it will initialize a typescript project by creating a tsconfig.json file
 and the options like sourceMap will map the javascript with the typescript and the .ts files will be in the src and the compiled files are in the dist folder
 
+`tsc` make a dist folder which will have the compiled files 
+add this to the next line 
+
 - creating a launch configration in the debug section go to the create a launch and debug configration -> node -> 
 
-"program": "${workspaceFolder}/src/index.ts",
+"program": "${workspaceFolder}/dist/index.ts", 
+
+
