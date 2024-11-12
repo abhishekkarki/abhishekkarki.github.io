@@ -34,3 +34,7 @@ Vite is used as a bundler
 - If you want to build the project for production (e.g., to deploy it), run: `npm run build`
 
 - preview the production build `npm run preview`
+
+
+
+removing the cached files `git rm -r --cached .vscode dist node_modules package-lock.json`
