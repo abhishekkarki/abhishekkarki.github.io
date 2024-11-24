@@ -1,40 +1,50 @@
-# portfolio
+# React + TypeScript + Vite
 
-## creating a node project
-`npm init -y` with this you will get a package.json file
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- install typescript `npm install -g typrscript`
+Currently, two official plugins are available:
 
-- check typescript version `tsc --version`
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- `tsc --init --sourceMap --rootDir src --outDir dist` it will initialize a typescript project by creating a tsconfig.json file
-and the options like sourceMap will map the javascript with the typescript and the .ts files will be in the src and the compiled files are in the dist folder
+## Expanding the ESLint configuration
 
-`tsc` make a dist folder which will have the compiled files 
-add this to the next line 
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- creating a launch configration in the debug section go to the create a launch and debug configration -> node -> 
+- Configure the top-level `parserOptions` property like this:
 
-"program": "${workspaceFolder}/dist/index.js",
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-- to set the watch the changes without compiling again and again
-`npm i --save-dev typescript`
-go to the command pallete -> Tasks: Configure Default Build Task -> tsc:watch-tsconfig.json 
-then again F1->Tasks:Run Build Task
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-•	Build the Project: Run npm run build to compile the TypeScript code to JavaScript.
-	•	Run the Project: After building, run npm start to execute the compiled code.
-	•	Develop with Watch Mode: Run npm run dev to enable watch mode, which automatically recompiles on file changes.
-	3.	Ensure tsconfig.json is Confi
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-
-Vite is used as a bundler
-- to start a development server `npm run dev` 
-
-- If you want to build the project for production (e.g., to deploy it), run: `npm run build`
-
-- preview the production build `npm run preview`
-
-
-
-removing the cached files `git rm -r --cached .vscode dist node_modules package-lock.json`
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
