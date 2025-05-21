@@ -1,13 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abhishek's page</title>
-    <script type="module" crossorigin src="/assets/index--LUIYpVa.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BJk-2RiU.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Portfolio</title>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left">
+      <a href="/">Abhishek Karki</a>
+    </div>
+
+    <div class="right">
+      <a href="http://github.com" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github"></i>
+        <span>Github</span>
+      </a>
+      
+      <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>Linkedin</span>
+      </a>
+      
+      <a href="mailto:john@example.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- SECTION 1: Hero -->
+    <section class="hero-section">
+      <div class="text">
+        <h2>Hi, I'm Abhishek karki 👋</h2>
+        <p>
+        I’m a developer with a strong focus on cloud computing, backend architecture, and system design. I enjoy working with containerization, 
+        infrastructure as code, and building scalable, cloud-native solutions. I’m always exploring new technologies, from automation tools to 
+        distributed systems, and I aim to write clean, efficient, and maintainable code that solves real-world problems.
+        </p><br>
+        <p>
+        Outside of work, I enjoy playing badminton and volleyball, cooking, and talking about emerging technologies.
+        Whether it’s staying active or diving into the latest tech trends, I like to keep learning and exploring new ideas
+        in and out of the digital world.
+        
+        </p>
+
+        <div class="links">
+          <a href="#skills">
+            <i class="fa-solid fa-code"></i>
+            <span>Skills</span>
+          </a>
+          
+          <a href="#testimony">
+            <i class="fa-solid fa-pen"></i>
+            <span>Testimony</span>
+          </a>
+          
+          <a href="#contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="headshot">
+        <img src="images/headshot.webp" alt="john doe headshot">
+      </div>
+    </section>
+
+    <!-- SECTION 2: Skills -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="text">
+        I have hands-on experience with cloud platforms including AWS, Google Cloud Platform (GCP), and Open Telekom Cloud (OTC). 
+        My expertise lies in building and managing scalable infrastructure using Infrastructure as Code (IaC) with Terraform. 
+        I work extensively with containerization technologies like Docker and am comfortable setting up and managing containerized environments.
+         I enjoy automating workflows, optimizing deployments, and designing robust, cloud-native systems that are efficient and maintainable.
+
+      </div>
+
+      <div class="cells">
+        <div class="cell">
+          <img src="images/linux-logo.webp" alt="linux logo">
+          <span>Linux</span>
+        </div>
+        
+        <div class="cell">
+          <img src="images/git-logo.webp" alt="git logo">
+          <span>Git</span>
+        </div>
+        
+        <div class="cell">
+          <img src="images/docker-logo.webp" alt="docker logo">
+          <span>Docker</span>
+        </div>
+        
+        <div class="cell">
+          <img src="images/kubernetes-logo.webp" alt="kubernetes logo">
+          <span>Kubernetes</span>
+        </div>
+        
+        <div class="cell">
+          <img src="images/terraform-logo.webp" alt="terraform logo">
+          <span>Terraform</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Testimony -->
+    <section id="testimony" class="testimony-section">
+      <h2>Projects</h2>
+
+      <div class="group">
+        <div class="person-details">
+          <img src="images/testimony-headshot.webp">
+          <p>Lightweight KV Store</p>
+          <p>A distributed key-value store for ESP32.</p>
+        </div>
+
+        <div class="text">
+          "Project's are coming soon ..."
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Contact -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+
+      <div class="group">
+        <div class="text">
+          I’m always open to new opportunities, collaborations, or just a good tech conversation. Feel free to reach out if you’d like to connect!
+          You can contact me via the contact form or find me on LinkedIn/GitHub.
+        </div>
+
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name">
+
+          <label for="email">Email</label>
+          <input type="email" id="email">
+
+          <label for="message">Message</label>
+          <textarea id="message" cols="30" rows="10"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
