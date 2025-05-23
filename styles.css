@@ -154,29 +154,29 @@ nav .right a span {
   font-size: 18px;
 }
 
-/* SECTION 3: Testimony */
-.testimony-section {
+/* SECTION 3: projects */
+.projects-section {
   padding: 0 50px;
   margin-bottom: 100px;
 }
 
-.testimony-section h2 {
+.projects-section h2 {
   font-size: 35px;
   margin-bottom: 30px;
 }
 
-.testimony-section .group {
+.projects-section .group {
   display: flex;
   align-items: center;
   gap: 50px;
 }
 
-.testimony-section .group .person-details {
+.projects-section .group .person-details {
   text-align: center;
   flex: 2;
 }
 
-.testimony-section .group .person-details img {
+.projects-section .group .person-details img {
   width: 200px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -184,15 +184,15 @@ nav .right a span {
   margin-bottom: 10px;
 }
 
-.testimony-section .group .person-details p {
+.projects-section .group .person-details p {
   font-weight: 600;
 }
 
-.testimony-section .group .person-details p:last-child {
+.projects-section .group .person-details p:last-child {
   font-weight: normal;
 }
 
-.testimony-section .group .text {
+.projects-section .group .text {
   flex: 8;
 }
 
@@ -265,12 +265,12 @@ nav .right a span {
     width: 300px;
   }
 
-  /* SECTION 3: Testimony */
-  .testimony-section {
+  /* SECTION 3: projects */
+  .projects-section {
     text-align: center;
   }
 
-  .testimony-section .group {
+  .projects-section .group {
     flex-direction: column;
   }
 
@@ -318,8 +318,8 @@ nav .right a span {
     font-size: 16px;
   }
 
-  /* SECTION 3: Testimony */
-  .testimony-section {
+  /* SECTION 3: projects */
+  .projects-section {
     padding: 0 20px;
   }
 
@@ -327,4 +327,33 @@ nav .right a span {
   .contact-section {
     padding: 0 20px;
   }
+}
+
+/* Dark mode variables override */
+body.dark-mode {
+  --text-color: #f1f1f1;
+  --link-color: #82aaff;
+  --background-color: #121212;
+}
+
+/* Style the dark mode toggle button */
+.dark-mode-toggle {
+  margin-left: 20px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #444;
+}
+
+body.dark-mode .dark-mode-toggle {
+  border-color: #82aaff;
+  color: #f1f1f1;
 }

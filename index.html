@@ -13,33 +13,68 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <title>Portfolio</title>
+  <title>Abhishek Karki Portfolio</title>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav>
-    <div class="left">
+    <!-- <div class="left">
       <a href="/">Abhishek Karki</a>
     </div>
 
     <div class="right">
-      <a href="http://github.com" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/abhishekkarki" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-github"></i>
         <span>Github</span>
       </a>
       
-      <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/abhishekkarkidev/" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-linkedin"></i>
         <span>Linkedin</span>
       </a>
       
-      <a href="mailto:john@example.com">
+      <a href="abhishekkarki202@gmail.com">
         <i class="fa-solid fa-envelope"></i>
         <span>Email</span>
       </a>
     </div>
-  </nav>
+    <button id="dark-mode-toggle" style="cursor:pointer; border:none; background:none; font-size:16px;">
+    
+    </button> -->
+        <div class="left">
+            <a href="/">Abhishek Karki</a>
+        </div>
 
+    <div class="right">
+        <a href="https://githki" target="_blank"><i class="fa-brands fa-github"></i> <span>Github</span></a>
+        <a href="https://www.liidev/" target="_blank"><i class="fa-brands fa-linkedin"></i> <span>Linkedin</span></a>
+        <a href="abhail.com"><i class="fa-solid fa-envelope"></i> <span>Email</span></a>
+
+        <!-- Dark mode toggle button -->
+        <button id="dark-mode-toggle" class="dark-mode-toggle">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+    </div>
+  </nav>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("dark-mode-toggle");
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      });
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  </script>
   <main>
     <!-- SECTION 1: Hero -->
     <section class="hero-section">
@@ -63,9 +98,9 @@
             <span>Skills</span>
           </a>
           
-          <a href="#testimony">
+          <a href="#projects">
             <i class="fa-solid fa-pen"></i>
-            <span>Testimony</span>
+            <span>Projects</span>
           </a>
           
           <a href="#contact">
@@ -76,7 +111,7 @@
       </div>
 
       <div class="headshot">
-        <img src="images/headshot.webp" alt="john doe headshot">
+        <img src="images/headshot.webp" alt="abhishek karki headshot">
       </div>
     </section>
 
@@ -119,13 +154,14 @@
       </div>
     </section>
 
-    <!-- SECTION 3: Testimony -->
-    <section id="testimony" class="testimony-section">
+    <!-- SECTION 3: Projects -->
+    <section id="projects" class="projects-section">
       <h2>Projects</h2>
 
+      <!-- Project 1: KV-Store -->
       <div class="group">
         <div class="person-details">
-          <img src="images/testimony-headshot.webp">
+          <!-- <img src="images/projects-headshot.webp"> -->
           <p>Lightweight KV Store</p>
           <p>A distributed key-value store for ESP32.</p>
         </div>
@@ -134,6 +170,33 @@
           "Project's are coming soon ..."
         </div>
       </div>
+
+      <!-- Project 2: AskDev -->
+      <div class="group">
+        <div class="person-details">
+          <!-- <img src="images/projects-headshot.webp"> -->
+          <p>AskDev</p>
+          <p>A chat extension.</p>
+        </div>
+
+        <div class="text">
+          "Project's are coming soon ..."
+        </div>
+      </div>
+
+      <!-- Project 3: IaaC -->
+      <div class="group">
+        <div class="person-details">
+          <!-- <img src="images/projects-headshot.webp"> -->
+          <p>Infrastructure Setup</p>
+          <p>Setting a infra using Terraform</p>
+        </div>
+
+        <div class="text">
+          "Project's are coming soon ..."
+        </div>
+      </div>
+
     </section>
 
     <!-- SECTION 4: Contact -->
