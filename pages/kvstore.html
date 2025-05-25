@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+</head>
+<body>
+    <nav>
+
+    </nav>
+
+    <main>
+        <h1>ESP32-Based Time-Series KV Store</h1>
+
+  <h2>1. Overview</h2>
+  <p>This project implements a lightweight time-series KV store on the ESP32, supporting range-based MQTT queries and flash persistence.</p>
+
+  <h2>2. Hardware Specifications</h2>
+  <ul>
+    <li>Microcontroller: ESP32-WROOM-32E</li>
+    <li>CPU: Dual-core Xtensa LX6, up to 240 MHz</li>
+    <li>RAM: 520 KB SRAM</li>
+    <li>Flash: 4 MB SPI Flash</li>
+    <li>Connectivity: Wi-Fi (802.11 b/g/n), Bluetooth v4.2</li>
+  </ul>
+
+  <h2>3. System Architecture</h2>
+  <p>The system uses a layered approach for data storage:</p>
+  <ol>
+    <li><strong>RAM Buffer:</strong> Holds recent measurements for fast access.</li>
+    <li><strong>NVS Flash:</strong> Stores data persistently once the buffer is full.</li>
+    <li><strong>Edge Device:</strong> (Future) Remote query support when data is not local.</li>
+  </ol>
+
+  <h2>4. Query Workflow</h2>
+  <p>MQTT messages specify a timestamp range, and the ESP32:</p>
+  <ul>
+    <li>Parses the query</li>
+    <li>Fetches data from RAM or Flash</li>
+    <li>Sends a JSON response via MQTT</li>
+  </ul>
+
+  <h2>5. Performance</h2>
+  <table border="1">
+    <tr>
+      <th>Storage Layer</th>
+      <th>Access Time</th>
+    </tr>
+    <tr>
+      <td>RAM Buffer</td>
+      <td>~100 µs</td>
+    </tr>
+    <tr>
+      <td>Flash (NVS)</td>
+      <td>~1–2 ms</td>
+    </tr>
+    <tr>
+      <td>Full Query</td>
+      <td>~50 ms</td>
+    </tr>
+  </table>
+
+  <h2>6. Future Work</h2>
+  <p>Planned improvements include:</p>
+  <ul>
+    <li>HTTP support</li>
+    <li>Edge device fallback logic</li>
+    <li>Cache optimizations</li>
+    </main>
+    
+</body>
+</html>

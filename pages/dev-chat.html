@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+</head>
+<body>
+    <nav>
+
+    </nav>
+
+    <main>
+        <h1>DevChat: Developer-Centric Chat Platform.</h1>
+        <p>DevChat is a real-time, context-aware chat platform built for developers to collaborate more effectively. Unlike traditional chat systems, DevChat structures communication around developer workflows — enabling teams to manage technical discussions, track decisions, and collaborate on code in a focused, async-friendly environment..</p>
+        
+        <h2>Cocept</h2>
+        <p>DevChat organizes messages into intent-based threads (e.g., "debug this issue", "review this function") that combine chat, documentation, and decision tracking. It blends live and async communication, supports AI-assisted summaries, and integrates with code editors and version control platforms like GitHub.</p>
+        
+        <h2>Features</h2>
+        <ul>
+            <li>Intent-Based Threads: Each thread is scoped to a clear developer task (bug, proposal, review, etc.).</li>
+            <li>Code-Aware Messages: Paste and comment on syntax-highlighted code blocks.</li>
+            <li>AI Summarization: Generate summaries, changelogs, or commit messages from discussions.</li>
+            <li>Real-Time Messaging: WebSocket-powered updates for seamless team collaboration.</li>
+            <li>Thread Timeline View: Visualize the lifecycle of a conversation — from problem to resolution.</li>
+            <li>VS Code & GitHub Integration (planned): Start or join threads from your IDE, link PRs/issues directly.</li>
+        </ul>
+
+        <h2>User Workflow</h2>
+        <ul>
+            <li>Create a Thread: Define the intent (e.g., "Fix API timeout"), add context, and invite collaborators.</li>
+            <li>Collaborate in Real-Time: Exchange messages, share code, and discuss fixes.</li>
+            <li>Summarize & Decide: Use AI to generate a summary or decision log.</li>
+            <li>Close the Loop: Mark the thread as resolved, link to the PR or commit.</li>
+        </ul>
+
+        <h2>Tech Stack</h2>
+        <h3>Frontend</h3>
+        <ul>
+            <li>Framework: React + TypeScript</li>
+            <li>Build Tool: Vite</li>
+            <li>Styling: TailwindCSS</li>
+            <li>State Management: Zustand or Context API</li>
+            <li>Code Editing: Monaco Editor or Shiki (for code blocks)</li>
+        </ul>
+
+        <h3>Backend</h3>
+        <ul>
+            <li>Framework: FastAPI</li>
+            <li>Database: PostgreSQL</li>
+            <li>Real-Time: WebSockets via FastAPI</li>
+            <li>Auth: JWT (GitHub OAuth planned)</li>
+            <li>AI: OpenAI API (for summaries)</li>
+        </ul>
+        <h3>overall</h3>
+        <ul>
+            <li>DevOps: Docker, Docker Compose</li>
+            <li>AI: OpenAI GPT API</li>
+            <li>Version Control: Git + GitHub</li>
+        </ul>
+    
+        <h2>Purpose</h2>
+        <ul>
+            <li>Built around developer intent, not just messages.</li>
+            <li>Bridges code, context, and conversation.</li>
+            <li>Works well for both real-time and async teams.</li>
+            <li>Summarizes complex threads to decisions and actions.</li>
+        </ul>
+    </main>
+    
+</body>
+</html>

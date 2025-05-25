@@ -136,43 +136,52 @@
       <h2>Projects</h2>
 
       <!-- Project 1: KV-Store -->
-      <div class="group">
-        <div class="person-details">
-          <!-- <img src="images/projects-headshot.webp"> -->
-          <p>Lightweight KV Store</p>
-          <p>A distributed key-value store for ESP32.</p>
-        </div>
+      <a href="./pages/kvstore.html" class="check out details">
+        <div class="group">
+          <div class="person-details">
+            <!-- <img src="images/projects-headshot.webp"> -->
+            <p>Lightweight KV Store</p>
+      </a>
+            <p>A distributed key-value store for ESP32.</p>
+          </div>
 
-        <div class="text">
-          "Project's are coming soon ..."
+          <div class="text">
+            This project implements a time-series key-value (KV) store on an ESP32 module for collecting, storing, and querying temperature measurements. Data is initially buffered in internal RAM for fast access and periodically flushed to non-volatile flash storage (NVS) to ensure persistence. The system supports range queries via MQTT messages, prioritizing reads from the buffer for low-latency access, and falling back to flash or edge-device queries when needed. Query response times are measured and optimized using microsecond-resolution timers. The project integrates seamlessly with an edge device for extended data access and leverages MQTT for lightweight, asynchronous communication.
+          </div>
         </div>
-      </div>
-
+      
+      <br>
       <!-- Project 2: AskDev -->
-      <div class="group">
-        <div class="person-details">
-          <!-- <img src="images/projects-headshot.webp"> -->
-          <p>AskDev</p>
-          <p>A chat extension.</p>
-        </div>
+      <a href="./pages/dev-chat.html" class="check out details">
+        <div class="group">
+          <div class="person-details">
+            <!-- <img src="images/projects-headshot.webp"> -->
+            <p>DevChat</p>
+      </a>    
+            <p>A chat extension.</p>
+          </div>
 
-        <div class="text">
-          "Project's are coming soon ..."
+          <div class="text">
+            DevChat is a developer-focused chat application designed for structured, async-first collaboration. It supports intent-based threads, code-aware messages, and real-time communication, helping teams track decisions, unblock issues, and summarize discussions with AI.
+            <p>Think Slack meets GitHub PR threads — built for dev workflows.</p>
+          </div>
         </div>
-      </div>
-
+      
+      <br>
       <!-- Project 3: IaaC -->
-      <div class="group">
-        <div class="person-details">
-          <!-- <img src="images/projects-headshot.webp"> -->
-          <p>Infrastructure Setup</p>
-          <p>Setting a infra using Terraform</p>
-        </div>
+      <a href="./pages/terraform.html" class="check out details">
+        <div class="group">
+          <div class="person-details">
+            <!-- <img src="images/projects-headshot.webp"> -->
+            <p>Infrastructure Setup</p>
+      </a>      
+            <p>Setting a infra using Terraform</p>
+          </div>
 
-        <div class="text">
-          "Project's are coming soon ..."
+          <div class="text">
+            This project implements a secure and modular Infrastructure as Code (IaC) setup on different cloud platforms using Terraform. It integrates HashiCorp Vault for secret management, ensuring that cloud credentials are never hardcoded. The infrastructure is organized by environment (dev, stag, prod), follows Terraform best practices, and is fully automated via a Makefile for consistent and repeatable deployments. Vault runs locally in Docker with persistent storage, and Terraform dynamically pulls secrets from Vault during every execution, enabling secure, scalable, and environment-aware cloud provisioning.
+          </div>
         </div>
-      </div>
 
     </section>
 
