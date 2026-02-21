@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distributed Rate Limiter — Abhishek</title>
+  <meta property="og:title" content="Distributed Rate Limiter — Abhishek" />
+  <meta property="og:description" content="Token bucket with Redis, sliding window, multi-region sync in Go." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/projects/rate-limiter.html" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <a class="back-link" href="../index.html">← back</a>
+
+    <div class="project-header">
+      <h1>Distributed Rate Limiter</h1>
+      <p class="subtitle">2024 · Go · API Design</p>
+      <div class="tags">
+        <span class="tag">Go</span>
+        <span class="tag">Redis</span>
+        <span class="tag">Lua</span>
+        <span class="tag">Middleware</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/yourusername/rate-limiter" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <p>
+        A rate limiting library and middleware for Go services. Implements multiple
+        algorithms (token bucket, sliding window, fixed window) backed by Redis for
+        distributed coordination across service instances.
+      </p>
+
+      <h2>Algorithms Supported</h2>
+      <ul>
+        <li><strong>Token bucket</strong> — Smooth rate limiting with burst allowance; good for API gateways</li>
+        <li><strong>Sliding window log</strong> — Precise, no boundary spikes; higher memory cost per user</li>
+        <li><strong>Sliding window counter</strong> — Approximate sliding window with O(1) memory; trades precision for efficiency</li>
+        <li><strong>Fixed window</strong> — Simplest, with known 2x burst at window boundaries</li>
+      </ul>
+
+      <h2>Design</h2>
+      <p>
+        All state lives in Redis. Each algorithm is implemented as an atomic Lua script
+        to avoid race conditions across concurrent check-and-decrement operations.
+        The middleware layer is pluggable — works with net/http, Gin, and Echo.
+      </p>
+
+      <h2>Design Decisions</h2>
+      <ul>
+        <li>Lua scripts execute atomically on Redis — no need for WATCH/MULTI/EXEC transaction overhead</li>
+        <li>Fail-open vs. fail-closed is configurable: default is fail-open to avoid cascading failures</li>
+        <li>Keys include a prefix + client identifier (IP, user ID, API key) for flexible granularity</li>
+        <li>TTL set to window duration to auto-clean stale keys without a separate GC process</li>
+      </ul>
+
+      <h2>Tradeoffs</h2>
+      <p>
+        Every rate limit check is a Redis round-trip (~0.5–1ms). For high-throughput
+        services this is acceptable. For sub-millisecond requirements, a local
+        approximate counter with periodic Redis sync is a better fit — a pattern
+        used by Cloudflare's rate limiter.
+      </p>
+
+    </div>
+
+    <footer>
+      <p><a href="../index.html">← Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

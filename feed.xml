@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abhishek Karki— Writing</title>
+    <link>https://abhishekkarki.github.io/writing/</link>
+    <description>Notes on distributed systems, system design, and software engineering.</description>
+    <language>en-us</language>
+    <atom:link href="https://abhishekkarki.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Consistency Models, Demystified</title>
+      <link>https://abhishekkarki.github.io/writing/consistency-models.html</link>
+      <guid>https://abhishekkarki.github.io/writing/consistency-models.html</guid>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <description>Linearizability, sequential consistency, eventual consistency — what they actually mean and when each one matters.</description>
+    </item>
+
+    <item>
+      <title>Why Raft Over Paxos?</title>
+      <link>https://abhishekkarki.github.io/writing/raft-vs-paxos.html</link>
+      <guid>https://abhishekkarki.github.io/writing/raft-vs-paxos.html</guid>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <description>Understandability as a design criterion, and what Raft actually simplifies over Paxos.</description>
+    </item>
+
+    <item>
+      <title>LSM Trees vs B-Trees</title>
+      <link>https://abhishekkarki.github.io/writing/lsm-vs-btree.html</link>
+      <guid>https://abhishekkarki.github.io/writing/lsm-vs-btree.html</guid>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      <description>When to use which storage engine, and what write amplification actually costs you.</description>
+    </item>
+
+    <item>
+      <title>Backpressure in Distributed Systems</title>
+      <link>https://abhishekkarki.github.io/writing/backpressure.html</link>
+      <guid>https://abhishekkarki.github.io/writing/backpressure.html</guid>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <description>How to stop one slow service from taking down everything upstream.</description>
+    </item>
+
+  </channel>
+</rss>

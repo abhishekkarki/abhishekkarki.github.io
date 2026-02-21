@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing — Abhishek</title>
+  <meta name="description" content="Technical writing on distributed systems, system design, and software engineering." />
+
+  <meta property="og:title" content="Writing — Abhishek" />
+  <meta property="og:description" content="Technical writing on distributed systems, system design, and software engineering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/writing/" />
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Abhishek — Writing" href="../feed.xml" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="../index.html">abhishek</a>
+      <nav>
+        <a href="../index.html#about">about</a>
+        <a href="../index.html#projects">projects</a>
+        <a href="index.html">writing</a>
+        <a href="../index.html#contact">contact</a>
+        <button id="theme-toggle" onclick="__toggleTheme()"></button>
+      </nav>
+    </header>
+
+    <div class="intro">
+      <h1>Writing</h1>
+      <p class="role">Notes on systems, tradeoffs, and engineering</p>
+    </div>
+
+    <p class="page-intro">
+      Occasional writeups on distributed systems, database internals, and things I've
+      learned building backend infrastructure. More longform than a tweet, less formal
+      than a paper.
+    </p>
+
+    <section>
+      <ul class="writing-list">
+
+        <li>
+          <a class="writing-link" href="consistency-models.html">
+            <div>
+              <div class="writing-title">Consistency Models, Demystified</div>
+              <div class="writing-subtitle">Linearizability, sequential consistency, eventual consistency — what they actually mean</div>
+            </div>
+            <span class="writing-date">Feb 2025</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="writing-link" href="raft-vs-paxos.html">
+            <div>
+              <div class="writing-title">Why Raft Over Paxos?</div>
+              <div class="writing-subtitle">Understandability as a design criterion, and what Raft actually simplifies</div>
+            </div>
+            <span class="writing-date">Nov 2024</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="writing-link" href="lsm-vs-btree.html">
+            <div>
+              <div class="writing-title">LSM Trees vs B-Trees</div>
+              <div class="writing-subtitle">When to use which storage engine, and what write amplification actually costs you</div>
+            </div>
+            <span class="writing-date">Aug 2024</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="writing-link" href="backpressure.html">
+            <div>
+              <div class="writing-title">Backpressure in Distributed Systems</div>
+              <div class="writing-subtitle">How to stop one slow service from taking down everything upstream</div>
+            </div>
+            <span class="writing-date">May 2024</span>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+    <footer>
+      <p>← <a href="../index.html" style="color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border);">Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

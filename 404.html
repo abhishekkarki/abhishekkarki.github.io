@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Abhishek Karki</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .error-block {
+      margin-top: 6rem;
+    }
+    .error-code {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .error-block h1 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .error-block p {
+      font-size: 0.9rem;
+      color: var(--fg);
+      opacity: 0.7;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="index.html">abhishek</a>
+      <nav>
+        <a href="index.html#about">about</a>
+        <a href="index.html#projects">projects</a>
+        <a href="writing/index.html">writing</a>
+        <a href="index.html#contact">contact</a>
+        <button id="theme-toggle" onclick="__toggleTheme()"></button>
+      </nav>
+    </header>
+
+    <div class="error-block">
+      <p class="error-code">404 — not found</p>
+      <h1>This page doesn't exist.</h1>
+      <p>
+        Either the link is broken, or the page was moved.<br />
+        Either way, there's nothing here.
+      </p>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="writing/index.html">Writing</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>← <a href="index.html" style="color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border);">Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

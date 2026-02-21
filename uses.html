@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uses — Abhishek</title>
+  <meta name="description" content="Tools, editor setup, and hardware I use." />
+
+  <meta property="og:title" content="Uses — Abhishek" />
+  <meta property="og:description" content="Tools, editor setup, and hardware I use daily." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abhishekkarki.github.io/uses.html" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="index.html">Abhishek Karki</a>
+      <nav>
+        <a href="index.html#about">about</a>
+        <a href="index.html#projects">projects</a>
+        <a href="writing/index.html">writing</a>
+        <a href="index.html#contact">contact</a>
+        <button id="theme-toggle" onclick="__toggleTheme()"></button>
+      </nav>
+    </header>
+
+    <div class="intro">
+      <h1>Uses</h1>
+      <p class="role">Setup, tools, and things I reach for daily</p>
+    </div>
+
+    <p class="page-intro">
+      The tools that have stuck around — ones I keep coming back to because they get
+      out of the way and let me think.
+    </p>
+
+    <section>
+      <p class="section-label">Editor</p>
+      <ul class="simple-list">
+        <li><strong>Neovim</strong> — with a minimal config. LSP, treesitter, telescope. Nothing else.</li>
+        <li><strong>JetBrains Mono</strong> — for the monospace font everywhere</li>
+        <li>Theme: a custom dark theme close to base16</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Terminal</p>
+      <ul class="simple-list">
+        <li><strong>Alacritty</strong> — GPU-accelerated, no tabs, no cruft</li>
+        <li><strong>tmux</strong> — for session management and split panes</li>
+        <li><strong>zsh</strong> with a minimal prompt showing only cwd and git branch</li>
+        <li><strong>fzf</strong> — fuzzy finding for files, history, git branches</li>
+        <li><strong>ripgrep</strong> — grep that doesn't make me wait</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Languages</p>
+      <ul class="simple-list">
+        <li><strong>Go</strong> — for services and systems tooling. Boring in the best way.</li>
+        <li><strong>Rust</strong> — for anything where performance and correctness both matter</li>
+        <li><strong>Java</strong> — for the JVM ecosystem when needed</li>
+        <li><strong>Python</strong> — scripts and one-offs</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Hardware</p>
+      <ul class="simple-list">
+        <li>MacBook Pro M2 — the battery life changed my relationship with desks</li>
+        <li>27" external monitor — vertical split for code, horizontal for docs</li>
+        <li>Keychron K2 — brown switches</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Other</p>
+      <ul class="simple-list">
+        <li><strong>Docker</strong> for local dev environments</li>
+        <li><strong>Obsidian</strong> for notes and design docs</li>
+        <li><strong>Excalidraw</strong> for architecture diagrams</li>
+        <li><strong>Linear</strong> for personal project tracking</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>← <a href="index.html" style="color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border);">Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

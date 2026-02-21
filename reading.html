@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading — Abhishek</title>
+  <meta name="description" content="Books and papers that shaped how I think about systems." />
+
+  <meta property="og:title" content="Reading — Abhishek" />
+  <meta property="og:description" content="Books and papers that shaped how I think about systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abhishekkarki.github.io/reading.html" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="index.html">Abhishek Karki</a>
+      <nav>
+        <a href="index.html#about">about</a>
+        <a href="index.html#projects">projects</a>
+        <a href="writing/index.html">writing</a>
+        <a href="index.html#contact">contact</a>
+        <button id="theme-toggle" onclick="__toggleTheme()"></button>
+      </nav>
+    </header>
+
+    <div class="intro">
+      <h1>Reading</h1>
+      <p class="role">Books and papers worth your time</p>
+    </div>
+
+    <p class="page-intro">
+      Things I've read that changed how I think about building systems.
+      Ordered by how often I find myself referencing them, not by when I read them.
+    </p>
+
+    <section>
+      <p class="section-label">Essential Books</p>
+      <ul class="simple-list">
+        <li>
+          <strong>Designing Data-Intensive Applications</strong> — Martin Kleppmann.
+          The single best book on distributed systems for practitioners.
+        </li>
+        <li>
+          <strong>Database Internals</strong> — Alex Petrov.
+          Storage engines, B-trees, LSM trees, and distributed algorithms from first principles.
+        </li>
+        <li>
+          <strong>Systems Performance</strong> — Brendan Gregg.
+          How to actually understand what a system is doing under the hood.
+        </li>
+        <li>
+          <strong>The Art of Unix Programming</strong> — Eric Raymond.
+          Old but the philosophy holds. Small tools, composability, text as interface.
+        </li>
+        <li>
+          <strong>A Philosophy of Software Design</strong> — John Ousterhout.
+          The best short book on managing complexity in code.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Papers</p>
+      <ul class="simple-list">
+        <li>
+          <a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf" target="_blank" rel="noopener">
+            Dynamo: Amazon's Highly Available Key-value Store
+          </a> — the eventual consistency paper that started many conversations
+        </li>
+        <li>
+          <a href="https://raft.github.io/raft.pdf" target="_blank" rel="noopener">
+            In Search of an Understandable Consensus Algorithm (Raft)
+          </a> — Ongaro &amp; Ousterhout
+        </li>
+        <li>
+          <a href="https://research.google/pubs/pub27898/" target="_blank" rel="noopener">
+            Bigtable: A Distributed Storage System for Structured Data
+          </a> — the foundation for HBase, Cassandra, and many others
+        </li>
+        <li>
+          <a href="https://www.cs.cmu.edu/~natassa/courses/15-823/F02/papers/p205-codd.pdf" target="_blank" rel="noopener">
+            A Relational Model of Data for Large Shared Data Banks
+          </a> — Codd. Worth reading the original.
+        </li>
+        <li>
+          <a href="https://dl.acm.org/doi/10.1145/3035918.3064029" target="_blank" rel="noopener">
+            Spanner: Google's Globally-Distributed Database
+          </a> — TrueTime and external consistency
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Blogs Worth Following</p>
+      <ul class="simple-list">
+        <li><a href="https://martin.kleppmann.com/" target="_blank" rel="noopener">Martin Kleppmann</a> — CRDTs, distributed systems</li>
+        <li><a href="https://brooker.co.za/blog/" target="_blank" rel="noopener">Marc Brooker</a> — AWS systems engineering, formal methods</li>
+        <li><a href="https://jvns.ca/" target="_blank" rel="noopener">Julia Evans</a> — systems concepts made accessible</li>
+        <li><a href="https://rachelbythebay.com/" target="_blank" rel="noopener">Rachel by the Bay</a> — production horror stories and lessons</li>
+        <li><a href="https://www.brendangregg.com/blog/" target="_blank" rel="noopener">Brendan Gregg</a> — performance engineering</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>← <a href="index.html" style="color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border);">Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

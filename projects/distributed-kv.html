@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distributed Key-Value Store — Abhishek</title>
+  <meta property="og:title" content="Distributed Key-Value Store — Abhishek" />
+  <meta property="og:description" content="Raft consensus, linearizable reads, WAL-based persistence built from scratch in Go." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/projects/distributed-kv.html" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <a class="back-link" href="../index.html">← back</a>
+
+    <div class="project-header">
+      <h1>Distributed Key-Value Store</h1>
+      <p class="subtitle">2025 · Go · Distributed Systems</p>
+      <div class="tags">
+        <span class="tag">Go</span>
+        <span class="tag">Raft</span>
+        <span class="tag">WAL</span>
+        <span class="tag">gRPC</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/yourusername/distributed-kv" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <p>
+        A distributed key-value store built from scratch to understand consensus protocols
+        and storage engine design. Supports linearizable reads, strong consistency, and
+        automatic leader election.
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Most KV stores abstract away the hard parts — consensus, log replication,
+        and failure recovery. I wanted to understand what happens at each layer by building it.
+      </p>
+
+      <h2>Architecture</h2>
+      <p>
+        The system is structured in three layers:
+      </p>
+      <ul>
+        <li><strong>Consensus layer</strong> — Raft implementation handling leader election, log replication, and membership changes</li>
+        <li><strong>Storage layer</strong> — Write-ahead log (WAL) for durability, with an in-memory hash map as the state machine</li>
+        <li><strong>Transport layer</strong> — gRPC for node-to-node communication, HTTP for client-facing API</li>
+      </ul>
+
+      <h2>Design Decisions</h2>
+      <ul>
+        <li>Linearizable reads require routing through the leader to avoid stale data on followers</li>
+        <li>Log compaction via snapshotting prevents unbounded WAL growth</li>
+        <li>Heartbeat interval tuned to balance leader election latency vs. network overhead</li>
+        <li>Batch log entries before appending to reduce disk I/O on the critical path</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <p>
+        Raft is deceptively simple on paper. The edge cases — split votes, log conflicts
+        during network partitions, snapshot installation — took most of the debugging time.
+        The hardest part was not the algorithm, but making the state transitions observable
+        enough to reason about failures.
+      </p>
+
+      <h2>Key Numbers</h2>
+      <ul>
+        <li>~10k ops/sec on a 3-node cluster (single-node benchmark: ~80k ops/sec)</li>
+        <li>P99 write latency: ~4ms (LAN)</li>
+        <li>Leader election converges in &lt;150ms under typical failure scenarios</li>
+      </ul>
+
+    </div>
+
+    <footer>
+      <p><a href="../index.html">← Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

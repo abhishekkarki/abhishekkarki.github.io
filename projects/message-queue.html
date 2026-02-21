@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Queue — Abhishek</title>
+  <meta property="og:title" content="Message Queue — Abhishek" />
+  <meta property="og:description" content="Persistent, ordered queue with consumer groups and at-least-once delivery in Java." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/projects/message-queue.html" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <a class="back-link" href="../index.html">← back</a>
+
+    <div class="project-header">
+      <h1>Message Queue</h1>
+      <p class="subtitle">2023 · Java · Messaging &amp; Storage</p>
+      <div class="tags">
+        <span class="tag">Java</span>
+        <span class="tag">Append-only log</span>
+        <span class="tag">Consumer groups</span>
+        <span class="tag">Persistence</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/yourusername/message-queue" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <p>
+        A persistent, ordered message queue inspired by Kafka's log-structured storage model.
+        Supports topics, partitions, consumer groups, and at-least-once delivery semantics.
+      </p>
+
+      <h2>Architecture</h2>
+      <ul>
+        <li><strong>Log storage</strong> — Each partition is an append-only log on disk, indexed by offset</li>
+        <li><strong>Broker</strong> — Accepts produce/consume requests over a simple TCP protocol</li>
+        <li><strong>Consumer groups</strong> — Partition assignment and offset tracking per consumer group</li>
+        <li><strong>Index</strong> — Sparse offset index for O(log n) seeks into the log segment</li>
+      </ul>
+
+      <h2>Design Decisions</h2>
+      <ul>
+        <li>Append-only writes give sequential I/O — much faster than random writes on spinning disks and SSDs alike</li>
+        <li>Consumers own their offset — broker doesn't track per-consumer state, enabling independent replay</li>
+        <li>Log segments are rolled at a configurable size (default 1GB) to bound file size and simplify retention</li>
+        <li>At-least-once delivery: messages are only acknowledged after the consumer commits its offset</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <p>
+        The insight behind Kafka's design is that disks are fast when accessed sequentially.
+        The bottleneck shifts from I/O to CPU (serialization) and network, not storage.
+        Consumer group rebalancing is the trickiest part — coordinating partition assignment
+        across consumers joining and leaving requires careful state management.
+      </p>
+
+      <h2>Limitations</h2>
+      <ul>
+        <li>Single broker — no replication or fault tolerance (Raft-based replication is a planned extension)</li>
+        <li>No compression — messages stored as-is</li>
+        <li>Pull-based consumers only; push-based delivery not implemented</li>
+      </ul>
+
+    </div>
+
+    <footer>
+      <p><a href="../index.html">← Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,214 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek Karki</title>
+  <meta name="description" content="Software engineer focused on distributed systems and system design." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abhishek — Software Engineer" />
+  <meta property="og:description" content="Software engineer focused on distributed systems and system design." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abhishekkarki.github.io/" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Abhishek — Software Engineer" />
+  <meta name="twitter:description" content="Software engineer focused on distributed systems and system design." />
 
-  <link rel="stylesheet" href="styles.css">
-
-  <title>Abhishek Karki Portfolio</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Abhishek — Writing" href="feed.xml" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav>
-    <div class="left">
-        <a href="/">Abhishek Karki</a>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="/">Abhi's page 👋 </a>
+      <nav>
+        <a href="#about">about</a>
+        <a href="#experience">experience</a>
+        <a href="#projects">projects</a>
+        <a href="writing/index.html">writing</a>
+        <a href="#contact">contact</a>
+        <button id="theme-toggle" onclick="__toggleTheme()"></button>
+      </nav>
+    </header>
+
+    <!-- ── Intro ── -->
+    <div class="intro">
+      <h1>Abhishek Karki</h1>
+      <p class="role">Software Engineer · Distributed Systems &amp; System Design</p>
+      <p>
+        I build backend systems that scale. Interested in the intersection of
+        distributed computing, database internals, and clean API design.
+        Currently working on [your current role / project].
+      </p>
     </div>
 
-    <div class="right">
-        <a href="https://github.com/abhishekkarki" target="_blank"><i class="fa-brands fa-github"></i> <span>Github</span></a>
-        <a href="https://www.linkedin.com/in/abhishekkarkidev" target="_blank"><i class="fa-brands fa-linkedin"></i> <span>Linkedin</span></a>
-        <a href="abhishekkarki202@gmail.com"><i class="fa-solid fa-envelope"></i> <span>Email</span></a>
+    <!-- ── About ── -->
+    <section class="about" id="about">
+      <p class="section-label">About</p>
+      <p>
+        I'm a software engineer with a focus on building reliable, scalable backend systems.
+        I think carefully about data models, consistency guarantees, and failure modes
+        before writing a single line of code.
+      </p>
+      <p>
+        When I'm not coding, I'm reading about distributed consensus
+        algorithms, or sketching out system designs on paper. I believe good software
+        is boring software — predictable, observable, and easy to reason about.
+      </p>
+    </section>
 
-        <!-- Dark mode toggle button -->
-        <button id="dark-mode-toggle" class="dark-mode-toggle">
-          <i class="fa-solid fa-circle-half-stroke"></i>
-        </button>
-    </div>
-  </nav>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.getElementById("dark-mode-toggle");
+    <!-- ── Experience ── -->
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <ul class="experience-list">
 
-      toggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+        <li>
+          <div class="exp-meta">
+            <span class="exp-role">Site Relaibility Engineer/ DevOps</span>
+            <span class="exp-company">Crealog Software-Entwicklung und Beratung GmbH</span>
+            <!-- <span class="exp-desc">Built and scaled the core data pipeline handling X events/day</span> -->
+          </div>
+          <span class="exp-period">2025 – present</span>
+        </li>
 
-        if (document.body.classList.contains("dark-mode")) {
-          localStorage.setItem("theme", "dark");
-        } else {
-          localStorage.setItem("theme", "light");
-        }
-      });
+        <li>
+          <div class="exp-meta">
+            <span class="exp-role">Software Engineer</span>
+            <span class="exp-company">Crealog Software-Entwicklung und Beratung GmbH</span>
+            <!-- <span class="exp-desc">Software Engineer</span> -->
+          </div>
+          <span class="exp-period">2022 – 2025</span>
+        </li>
 
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-      }
-    });
-  </script>
-  <main>
-    <!-- SECTION 1: Hero -->
-    <section class="hero-section">
-      <div class="text">
-        <h2>Hi, I'm Abhishek karki 👋</h2>
-        <p>
-        I’m a developer with a strong focus on cloud computing, backend architecture, and system design. I enjoy working with containerization, 
-        infrastructure as code, and building scalable, cloud-native solutions. I’m always exploring new technologies, from automation tools to 
-        distributed systems, and I aim to write clean, efficient, and maintainable code that solves real-world problems.
-        </p><br>
-        <p>
-        Outside of work, I enjoy playing badminton and volleyball, cooking, and talking about emerging technologies.
-        Whether it’s staying active or diving into the latest tech trends, I like to keep learning and exploring new ideas
-        in and out of the digital world.
-        
-        </p>
+      </ul>
+    </section>
 
-        <div class="links">
-          <a href="#skills">
-            <i class="fa-solid fa-code"></i>
-            <span>Skills</span>
+    <!-- ── Education ── -->
+    <section id="education">
+      <p class="section-label">Education</p>
+      <ul class="education-list">
+
+        <li>
+          <div class="exp-meta">
+            <span class="exp-university">Technical University of Munich</span>
+            <span class="exp-degree">Master of Science in Computer Science</span>
+          </div>
+        </li>
+        <li>
+          <div class="exp-meta">
+            <span class="exp-university">SRM IST Chennai</span>
+            <span class="exp-degree">Bachelor of Science in Computer Science</span>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ── Projects ── -->
+    <section id="projects">
+      <p class="section-label">Projects</p>
+      <ul class="projects-list">
+
+        <li>
+          <a class="project-link" href="projects/distributed-kv.html">
+            <div class="project-meta">
+              <span class="project-title">Distributed Key-Value Store</span>
+              <span class="project-desc">Raft consensus, linearizable reads, WAL-based persistence</span>
+              <div class="tags">
+                <span class="tag">Go</span>
+                <span class="tag">Raft</span>
+                <span class="tag">Distributed Systems</span>
+              </div>
+            </div>
+            <span class="project-year">2025</span>
           </a>
-          
-          <a href="#projects">
-            <i class="fa-solid fa-pen"></i>
-            <span>Projects</span>
+        </li>
+
+        <li>
+          <a class="project-link" href="projects/query-engine.html">
+            <div class="project-meta">
+              <span class="project-title">SQL Query Engine</span>
+              <span class="project-desc">Volcano model executor, B-tree indexes, cost-based optimizer</span>
+              <div class="tags">
+                <span class="tag">Rust</span>
+                <span class="tag">Database Internals</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <span class="project-year">2024</span>
           </a>
-          
-          <a href="#contact">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contact</span>
+        </li>
+
+        <li>
+          <a class="project-link" href="projects/rate-limiter.html">
+            <div class="project-meta">
+              <span class="project-title">Distributed Rate Limiter</span>
+              <span class="project-desc">Token bucket with Redis, sliding window, multi-region sync</span>
+              <div class="tags">
+                <span class="tag">Go</span>
+                <span class="tag">Redis</span>
+                <span class="tag">API Design</span>
+              </div>
+            </div>
+            <span class="project-year">2024</span>
           </a>
-        </div>
-      </div>
+        </li>
 
-      <div class="headshot">
-        <img src="images/headshot.webp" alt="abhishek karki headshot">
+        <li>
+          <a class="project-link" href="projects/message-queue.html">
+            <div class="project-meta">
+              <span class="project-title">Message Queue</span>
+              <span class="project-desc">Persistent, ordered queue with consumer groups and at-least-once delivery</span>
+              <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">Messaging</span>
+                <span class="tag">Storage Engine</span>
+              </div>
+            </div>
+            <span class="project-year">2023</span>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <div class="links">
+        <a href="https://github.com/abhishekkarki" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/abhishekkarkidev" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:abhishekkarki202@gmail.com">Email</a>
+        <!-- <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">Twitter</a> -->
       </div>
     </section>
 
-    <!-- SECTION 2: Skills -->
-    <section id="skills" class="skills-section">
-      <h2>Skills</h2>
-      <div class="text">
-        I have hands-on experience with cloud platforms including AWS, Google Cloud Platform (GCP), and Open Telekom Cloud (OTC). 
-        My expertise lies in building and managing scalable infrastructure using Infrastructure as Code (IaC) with Terraform. 
-        I work extensively with containerization technologies like Docker and am comfortable setting up and managing containerized environments.
-         I enjoy automating workflows, optimizing deployments, and designing robust, cloud-native systems that are efficient and maintainable.
-
+    <footer>
+      <div class="footer-links">
+        <a href="now.html">now</a>
+        <a href="uses.html">uses</a>
+        <a href="reading.html">reading</a>
       </div>
+      <p>Handcrafted with caffeine and ☕️ by Abhishek Karki</p>
+    </footer>
 
-      <div class="cells">
-        <div class="cell">
-          <img src="images/linux-logo.webp" alt="linux logo">
-          <span>Linux</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/git-logo.webp" alt="git logo">
-          <span>Git</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/docker-logo.webp" alt="docker logo">
-          <span>Docker</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/kubernetes-logo.webp" alt="kubernetes logo">
-          <span>Kubernetes</span>
-        </div>
-        
-        <div class="cell">
-          <img src="images/terraform-logo.webp" alt="terraform logo">
-          <span>Terraform</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: Projects -->
-    <section id="projects" class="projects-section">
-      <h2>Projects</h2>
-
-      <!-- Project 1: KV-Store -->
-      <a href="./pages/kvstore.html" class="check out details">
-        <div class="group">
-          <div class="person-details">
-            <!-- <img src="images/projects-headshot.webp"> -->
-            <p>Lightweight KV Store</p>
-      </a>
-            <p>A distributed key-value store for ESP32.</p>
-          </div>
-
-          <div class="text">
-            This project implements a time-series key-value (KV) store on an ESP32 module for collecting, storing, and querying temperature measurements. Data is initially buffered in internal RAM for fast access and periodically flushed to non-volatile flash storage (NVS) to ensure persistence. The system supports range queries via MQTT messages, prioritizing reads from the buffer for low-latency access, and falling back to flash or edge-device queries when needed. Query response times are measured and optimized using microsecond-resolution timers. The project integrates seamlessly with an edge device for extended data access and leverages MQTT for lightweight, asynchronous communication.
-          </div>
-        </div>
-      
-      <br>
-      <!-- Project 2: AskDev -->
-      <a href="./pages/dev-chat.html" class="check out details">
-        <div class="group">
-          <div class="person-details">
-            <!-- <img src="images/projects-headshot.webp"> -->
-            <p>DevChat</p>
-      </a>    
-            <p>A chat extension.</p>
-          </div>
-
-          <div class="text">
-            DevChat is a developer-focused chat application designed for structured, async-first collaboration. It supports intent-based threads, code-aware messages, and real-time communication, helping teams track decisions, unblock issues, and summarize discussions with AI.
-            <p>Think Slack meets GitHub PR threads — built for dev workflows.</p>
-          </div>
-        </div>
-      
-      <br>
-      <!-- Project 3: IaaC -->
-      <a href="./pages/terraform.html" class="check out details">
-        <div class="group">
-          <div class="person-details">
-            <!-- <img src="images/projects-headshot.webp"> -->
-            <p>Infrastructure Setup</p>
-      </a>      
-            <p>Setting a infra using Terraform</p>
-          </div>
-
-          <div class="text">
-            This project implements a secure and modular Infrastructure as Code (IaC) setup on different cloud platforms using Terraform. It integrates HashiCorp Vault for secret management, ensuring that cloud credentials are never hardcoded. The infrastructure is organized by environment (dev, stag, prod), follows Terraform best practices, and is fully automated via a Makefile for consistent and repeatable deployments. Vault runs locally in Docker with persistent storage, and Terraform dynamically pulls secrets from Vault during every execution, enabling secure, scalable, and environment-aware cloud provisioning.
-          </div>
-        </div>
-
-    </section>
-
-    <!-- SECTION 4: Contact -->
-    <section id="contact" class="contact-section">
-      <h2>Contact</h2>
-
-      <div class="group">
-        <div class="text">
-          I’m always open to new opportunities, collaborations, or just a good tech conversation. Feel free to reach out if you’d like to connect!
-          You can contact me via the contact form or find me on LinkedIn/GitHub.
-        </div>
-
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name">
-
-          <label for="email">Email</label>
-          <input type="email" id="email">
-
-          <label for="message">Message</label>
-          <textarea id="message" cols="30" rows="10"></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </main>
+  </div>
 </body>
 </html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consistency Models, Demystified — Abhishek</title>
+  <meta name="description" content="Linearizability, sequential consistency, eventual consistency — what they actually mean." />
+
+  <meta property="og:title" content="Consistency Models, Demystified" />
+  <meta property="og:description" content="Linearizability, sequential consistency, eventual consistency — what they actually mean." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yourusername.github.io/writing/consistency-models.html" />
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="../index.html">abhishek</a>
+      <nav>
+        <a href="../index.html#about">about</a>
+        <a href="../index.html#projects">projects</a>
+        <a href="index.html">writing</a>
+        <a href="../index.html#contact">contact</a>
+        <button id="theme-toggle" onclick="__toggleTheme()"></button>
+      </nav>
+    </header>
+
+    <a class="back-link" href="index.html">← writing</a>
+
+    <div class="project-header">
+      <h1>Consistency Models, Demystified</h1>
+      <p class="subtitle">February 2025 · <span class="reading-time">...</span></p>
+    </div>
+
+    <div class="content">
+
+      <p>
+        Consistency is one of those words in distributed systems that means different things
+        in different contexts. ACID consistency (data invariants), CAP consistency (linearizability),
+        and eventual consistency are all different ideas wearing the same name.
+        This post is about the second kind: what ordering guarantees does a distributed
+        data store give you?
+      </p>
+
+      <h2>Why it matters</h2>
+      <p>
+        If you write a value to a database and immediately read it back, do you see your write?
+        What if the write went to one replica and the read goes to a different one?
+        The answer depends on the consistency model the system provides.
+      </p>
+      <p>
+        Getting this wrong is a common source of subtle bugs. A cache that reads stale data
+        after an update, a balance that shows the wrong amount for a few seconds, an
+        inventory count that goes negative because two processes read the same value before
+        either wrote — all consistency bugs.
+      </p>
+
+      <h2>Linearizability</h2>
+      <p>
+        The strongest model for a single object. A system is linearizable if every operation
+        appears to take effect instantaneously at some point between its invocation and completion.
+        Once a write completes, every subsequent read (by any client) sees that write or a later one.
+      </p>
+      <p>
+        In practice: if you write to a linearizable store and hand a friend the confirmation,
+        they can immediately read the value and see it. No "eventually."
+      </p>
+      <pre><code>Client A: write(x, 1) ---[ok]---&gt;
+Client B:              ---read(x)---&gt; 1   ✓ must see 1
+</code></pre>
+      <p>
+        Linearizability is expensive. Achieving it requires coordination — usually a consensus
+        round or a leader that serializes all writes. This is why it's associated with latency.
+        Raft gives you linearizable reads if you route them through the leader. ZooKeeper's
+        reads are not linearizable by default (they can serve stale data from followers);
+        you have to call <code>sync()</code> first.
+      </p>
+
+      <h2>Sequential Consistency</h2>
+      <p>
+        Weaker than linearizability. Operations appear in some sequential order that is
+        consistent with the order seen by each individual process, but not necessarily
+        with real time. Concretely: you can see your own writes in order, and everyone sees
+        the same global order — but that global order might not reflect wall-clock time.
+      </p>
+      <p>
+        The key difference: in linearizability, if operation A completes before operation B
+        starts in real time, A must appear before B in the global order. Sequential
+        consistency drops this requirement.
+      </p>
+
+      <h2>Causal Consistency</h2>
+      <p>
+        Operations that are causally related must appear in causal order. If you read a value
+        and then write based on it, anyone who sees your write must also see the read you
+        based it on. Independent (causally unrelated) operations can appear in any order.
+      </p>
+      <p>
+        This is the strongest model achievable without coordination, which makes it attractive
+        for geo-distributed systems. COPS and Occult are academic systems built around causal
+        consistency. MongoDB's causal sessions offer a version of this.
+      </p>
+
+      <h2>Eventual Consistency</h2>
+      <p>
+        The weakest useful model. If no new updates are made, all replicas will eventually
+        converge to the same value. That's it. No guarantees about when, and no guarantees
+        about what you see in the interim.
+      </p>
+      <p>
+        DNS is eventually consistent. S3 used to be (it's now strongly consistent for new
+        objects since 2020). Cassandra is tunable but defaults to eventual.
+      </p>
+      <p>
+        "Eventual" doesn't mean slow — replicas might converge in milliseconds. It means
+        you cannot make any guarantees about a specific read returning the latest write.
+      </p>
+
+      <h2>Which to choose?</h2>
+      <p>
+        Most systems need linearizability for things like account balances, inventory counts,
+        or anything where a stale read has real consequences. Eventual consistency works for
+        user profiles, recommendation systems, or any case where seeing slightly stale data
+        is acceptable and availability matters more.
+      </p>
+      <p>
+        The mistake is assuming you need the weakest model for performance without measuring.
+        Modern consensus-based systems (etcd, CockroachDB, Spanner) deliver linearizability
+        at latencies that would have seemed impossible a decade ago.
+      </p>
+
+    </div>
+
+    <!-- ── Comments (giscus) ── -->
+    <div class="comments">
+      <p class="section-label">Discussion</p>
+      <!--
+        To enable comments:
+        1. Go to https://giscus.app
+        2. Enter your GitHub repo (e.g. yourusername/yourusername.github.io)
+        3. Enable GitHub Discussions on the repo
+        4. Replace the placeholder values below with your generated config
+      -->
+      <script src="https://giscus.app/client.js"
+        data-repo="yourusername/yourusername.github.io"
+        data-repo-id="YOUR_REPO_ID"
+        data-category="Announcements"
+        data-category-id="YOUR_CATEGORY_ID"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="0"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+
+    <footer>
+      <p>← <a href="index.html" style="color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border);">Back to writing</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

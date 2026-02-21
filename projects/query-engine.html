@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Query Engine — Abhishek</title>
+  <meta property="og:title" content="SQL Query Engine — Abhishek" />
+  <meta property="og:description" content="Volcano model executor, B-tree indexes, cost-based optimizer built in Rust." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourusername.github.io/projects/query-engine.html" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <a class="back-link" href="../index.html">← back</a>
+
+    <div class="project-header">
+      <h1>SQL Query Engine</h1>
+      <p class="subtitle">2024 · Rust · Database Internals</p>
+      <div class="tags">
+        <span class="tag">Rust</span>
+        <span class="tag">SQL</span>
+        <span class="tag">B-tree</span>
+        <span class="tag">Query Planner</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/yourusername/query-engine" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <p>
+        A relational query engine that parses SQL, builds a logical plan, applies
+        cost-based optimizations, and executes via a Volcano-model iterator tree.
+        Supports B-tree indexes, joins, aggregations, and transactions.
+      </p>
+
+      <h2>Architecture</h2>
+      <ul>
+        <li><strong>Parser</strong> — Hand-written recursive descent parser producing an AST</li>
+        <li><strong>Planner</strong> — Converts AST to a logical plan, then rewrites with push-down predicates and join reordering</li>
+        <li><strong>Optimizer</strong> — Cost model using table statistics (row counts, column cardinality) to pick index scans vs. full scans</li>
+        <li><strong>Executor</strong> — Volcano iterator model: each node implements <code>next()</code>, composing into a tree</li>
+        <li><strong>Storage</strong> — Page-based storage with a buffer pool manager, B-tree index, and MVCC for transactions</li>
+      </ul>
+
+      <h2>Design Decisions</h2>
+      <ul>
+        <li>Chose Volcano model over vectorized execution for simplicity — easier to reason about operator boundaries</li>
+        <li>MVCC over 2PL: avoids read-write conflicts without locks, at the cost of more complex GC</li>
+        <li>Predicate push-down happens before join reordering, keeping the optimizer deterministic</li>
+        <li>Fixed 4KB page size — trades flexibility for simpler alignment with OS page size</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <p>
+        The buffer pool manager is the most consequential component — a bug there corrupts
+        data silently. Rust's ownership model caught several use-after-free issues at
+        compile time that would have been subtle runtime bugs in C++.
+      </p>
+      <p>
+        Cost-based optimization is hard to get right without good statistics.
+        Cardinality estimation errors compound through join chains, leading to
+        dramatically wrong plan choices.
+      </p>
+
+    </div>
+
+    <footer>
+      <p><a href="../index.html">← Back to index</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="theme.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now — Abhishek Karki</title>
+  <meta name="description" content="What Abhishek is currently working on." />
+
+  <meta property="og:title" content="Now — Abhishek" />
+  <meta property="og:description" content="What I'm currently working on, reading, and thinking about." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abhishekkarki.github.io/now.html" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <a class="site-name" href="index.html">Abhishek Karki</a>
+      <nav>
+        <a href="index.html#about">about</a>
+        <a href="index.html#projects">projects</a>
+        <a href="writing/index.html">writing</a>
+        <a href="index.html#contact">contact</a>
+        <button id="theme-toggle" onclick="__toggleTheme()"></button>
+      </nav>
+    </header>
+
+    <div class="intro">
+      <h1>Now</h1>
+      <p class="role">What I'm up to</p>
+    </div>
+
+    <p class="updated">Last updated: February 2025 · Munich, Germany</p>
+
+    <section>
+      <p class="section-label">Working on</p>
+      <p class="page-intro">
+        Finishing up a distributed key-value store in Go — currently working through the
+        edge cases in Raft log compaction. Also exploring storage engine internals,
+        specifically how RocksDB handles compaction scheduling.
+      </p>
+    </section>
+
+    <section>
+      <p class="section-label">Reading</p>
+      <ul class="simple-list">
+        <li><em>Database Internals</em> — Alex Petrov. Dense but worth it.</li>
+        <li><em>The Architecture of Open Source Applications</em> — various chapters</li>
+        <li>The Dynamo paper again — different things stand out each time</li>
+        <li>Martin Kleppmann's blog on CRDTs</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Thinking about</p>
+      <ul class="simple-list">
+        <li>What makes a good abstraction vs. a leaky one</li>
+        <li>How to make distributed systems observable without drowning in metrics</li>
+        <li>Whether Rust is the right language for systems programming or just a fun one</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Not doing</p>
+      <ul class="simple-list">
+        <li>Social media (mostly)</li>
+        <li>Chasing hype-driven tech</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>
+        This is a <a href="https://nownownow.com/about" target="_blank" rel="noopener"
+          style="color: var(--muted); border-bottom: 1px solid var(--border); text-decoration: none;">/now page</a>.
+        ← <a href="index.html" style="color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border);">Back to index</a>
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
