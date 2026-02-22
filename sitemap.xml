@@ -2,61 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://yourusername.github.io/</loc>
+    <loc>https://abhishekkarki.github.io/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/now.html</loc>
+    <loc>https://abhishekkarki.github.io/now.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/uses.html</loc>
+    <loc>https://abhishekkarki.github.io/uses.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/reading.html</loc>
+    <loc>https://abhishekkarki.github.io/reading.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/writing/</loc>
+    <loc>https://abhishekkarki.github.io/writing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/writing/consistency-models.html</loc>
+    <loc>https://abhishekkarki.github.io/writing/consistency-models.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/projects/distributed-kv.html</loc>
+    <loc>https://abhishekkarki.github.io/projects/distributed-kv.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/projects/query-engine.html</loc>
+    <loc>https://abhishekkarki.github.io/projects/query-engine.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/projects/rate-limiter.html</loc>
+    <loc>https://abhishekkarki.github.io/projects/rate-limiter.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://yourusername.github.io/projects/message-queue.html</loc>
+    <loc>https://abhishekkarki.github.io/projects/message-queue.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
